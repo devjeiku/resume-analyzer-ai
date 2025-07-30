@@ -1,17 +1,18 @@
+interface Job {
+    title: string;
+    description: string;
+    location: string;
+    requiredSkills: string[];
+}
+
 interface Resume {
     id: string;
-    companyName: string;
-    jobTitle: string;
+    companyName?: string;
+    jobTitle?: string;
     imagePath: string;
     resumePath: string;
     feedback: Feedback;
 }
-
-type Tip = {
-    type: 'good' | 'improve';
-    tip: string;
-    explanation: string;
-};
 
 interface Feedback {
     overallScore: number;
@@ -24,18 +25,34 @@ interface Feedback {
     };
     toneAndStyle: {
         score: number;
-        tips: Tip[];
+        tips: {
+            type: 'good' | 'improve';
+            tip: string;
+            explanation: string;
+        }[];
     };
     content: {
         score: number;
-        tips: Tip[];
+        tips: {
+            type: 'good' | 'improve';
+            tip: string;
+            explanation: string;
+        }[];
     };
     structure: {
         score: number;
-        tips: Tip[];
+        tips: {
+            type: 'good' | 'improve';
+            tip: string;
+            explanation: string;
+        }[];
     };
     skills: {
         score: number;
-        tips: Tip[];
+        tips: {
+            type: 'good' | 'improve';
+            tip: string;
+            explanation: string;
+        }[];
     };
 }
